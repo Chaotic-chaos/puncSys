@@ -1,0 +1,92 @@
+<!--
+   Project:       puncSysDemo
+   File Name:     index
+   Author:        Chaos
+   Email:         life0531@foxmail.com
+   Date:          2021/7/15
+   Software:      PyCharm
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo of the pure BERT model</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/bert/statics/index.css">
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row">
+        <br>
+        <div class="layui-col-12">
+            <h1><center>标点符号恢复模型Demo展示</center></h1>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="layui-row">
+        <div class="layui-col-12">
+            <div class="layui-progress layui-progress">
+                <div class="layui-progress-bar layui-bg-orange" lay-percent="100%"></div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-panel">
+                <div class="card-title">
+                    <i class="layui-icon layui-icon-chat" style="float: left; margin-right: 10px; padding-top: 3px; color: red;"></i>
+                    <h3>请输入原始语句(系统目前暂不支持自动洗标点，请输入无标点语句)</h3>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <center>
+                        <textarea name="origin-sentence" id="origin-sentence" required lay-verify="required" placeholder="请输入..." class="layui-textarea"></textarea>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md6">
+            <div class="layui-panel">
+                <div class="card-title">
+                    <i class="layui-icon layui-icon-vercode" style="float: left; margin-right: 10px; padding-top: 3px; color: lightgreen;"></i>
+                    <h3>标点恢复结果</h3>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <center>
+                        <textarea name="punctuate-sentence" id="punctuated-sentence" required disabled class="layui-textarea"></textarea>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <button type="button" class="layui-btn layui-btn-fluid layui-btn-normal" id="punctuate">
+                <i class="layui-icon layui-icon-upload-drag"></i>
+                去恢复
+            </button>
+<!--            <div class="layui-progress">-->
+<!--                <div class="layui-progress-bar layui-bg-cyan" lay-percent="10%"></div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script src="/bert/statics/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/*
+   Project:       puncSysDemo
+   File Name:     index
+   Author:        Chaos
+   Email:         life0531@foxmail.com
+   Date:          2021/7/15
+   Software:      PyCharm
+*/
+
+.card-title {
+    padding: 30px;
+    padding-bottom: 0px;
+}
+
+.card-body {
+    margin: 10px;
+}
+
+#origin-sentence {
+    width: 95%;
+}
