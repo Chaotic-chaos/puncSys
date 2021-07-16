@@ -52,10 +52,11 @@ async def inference(request):
     sentence = list(sentence)
 
     ids = tokenizer.convert_tokens_to_ids(sentence)
-    input = torch.tensor(ids, dtype=torch.long)
+    input = torch.tensor(ids, dtype=torch.long, device=device)
 
     with torch.no_grad():
         pred = model(input.unsqueeze(0))
+    pred = pred.cpu()
     pred_ids = torch.argmax(pred.squeeze(0), 1).numpy().tolist()
 
     pred_label = [label_vocab.get(id) for id in pred_ids]

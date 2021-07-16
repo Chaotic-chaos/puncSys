@@ -31,17 +31,21 @@ $(document).ready(function (){
                     "sentence": sentence,
                 }),
                 error: function(error){
-                    layer.msg("请求失败，请重试...", {
-                        icon: 2,
-                        time: 1500,
-                    })
-                },
-                success: function (response){
-                    $("#punctuated-sentence").val(response.res)
                     $("#punctuate").html(
                         "<i class=\"layui-icon layui-icon-upload-drag\"></i>\n" +
                         "                去恢复"
-                    )
+                    );
+                    layer.msg("请求失败，请重试...", {
+                        icon: 2,
+                        time: 1500,
+                    });
+                },
+                success: function (response){
+                    $("#punctuated-sentence").val(response.res);
+                    $("#punctuate").html(
+                        "<i class=\"layui-icon layui-icon-upload-drag\"></i>\n" +
+                        "                去恢复"
+                    );
                 }
             })
         }
